@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MonsterDatabase
 {
@@ -8,6 +7,7 @@ namespace MonsterDatabase
         static void Main(string[] args)
         {
             MonsterChort monsterchort = new MonsterChort();
+
             Console.Read();
 
         }
@@ -15,14 +15,13 @@ namespace MonsterDatabase
 
     class Monster : MonsterStudent
     {
-        public class Monster
+        public Monster()
         {
-            this.Id = 0;
-            this.name = "Dipak";
-            this.eyes = "black";
-            this.hair = "black";
-            this.scarylevel = 2;
-            this.specialablitiy = "long attack";
+            public MonsterStudent(int idAttribute, string nameAttribute, string eyeAttribute, string hairAttribute,
+                                 int scarylevelAttribute, string speicalablitiyAttribute)
+            {
+
+            }
         }
     }
 }

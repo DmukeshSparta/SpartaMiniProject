@@ -11,6 +11,8 @@ namespace MonsterDatabase
     {
         string subject;
         DateTime startdate;
+        List<Monster> listofmonster = new List<Monster>();
+        
 
         public void addStudent()
         {
@@ -19,21 +21,26 @@ namespace MonsterDatabase
 
         public void ListStudent()
         {
+            foreach(Monster An in listofmonster)
+            {
 
+            }
         }
 
 
         public void ExternalStudent()
         {
-            string line = "";
-            using (StreamReader sr = new StreamReader("monsterdatabase.txt"))
+            string line;
+            StreamReader sr = new StreamReader("monsterdatabase.txt");
             {
                 while ((line = sr.ReadLine()) != null)
                 {
-                    Console.WriteLine(line);
+                    string[] words = line.Split(',');
+                    listofmonster.Add(new Monster(words[0], words[1], words[2], words[3], words[4], words[5]));
                 }
+            sr.Close();
             }
-            Console.ReadKey();
+           
         }
     }
 }
